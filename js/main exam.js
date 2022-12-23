@@ -10,8 +10,9 @@ $(document).ready(function () {
 // -------------------------------------Side Nav--------------------------------
 $(".close-icon").click(() => {
   let sideWidth = $(".side-div ").outerWidth();
-  if ($(".nav-side").css("left") == "-264.562px") {
-    $(".nav-side").animate({ left: "0px" }, 500);
+  if ($(".side-div ").css("left") == "-264.562px") {
+    $(".side-div").animate({ left: "0px" }, 500);
+    $(".nav-right").animate({ left: "264.562px" }, 500);
     $(".close-icon").removeClass("fa-align-justify");
     $(".close-icon").addClass("fa-x");
     for (let i = 0; i < 5; i++) {
@@ -21,7 +22,8 @@ $(".close-icon").click(() => {
     }
   } else {
     $(".nav-top ul li").animate({ top: "400" }, 500);
-    $(".nav-side").animate({ left: -sideWidth }, 500);
+    $(".side-div").animate({ left: -sideWidth }, 500);
+    $(".nav-right").animate({ left: "0px" }, 500);
     $(".close-icon").addClass("fa-align-justify");
     $(".close-icon").removeClass("fa-x");
   }
